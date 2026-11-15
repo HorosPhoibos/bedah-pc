@@ -87,16 +87,60 @@ const PHOTOS=[
      [56,18,1.8,2.6,'Speaker bip','Speaker kecil untuk kode bip saat ada masalah.'],
      [37.5,95,9,4,'Port depan','USB dan jack audio di bagian depan.'],
      [79,73,4,8,'VRM','Rangkaian pengatur daya CPU (coil hitam bertuliskan R30).'],
-     [46,76.4,1.6,2,'Jumper CLR_CMOS','Pin merah untuk mereset BIOS ke pengaturan pabrik, misalnya saat lupa password BIOS.']]}
+     [46,76.4,1.6,2,'Jumper CLR_CMOS','Pin merah untuk mereset BIOS ke pengaturan pabrik, misalnya saat lupa password BIOS.']]},
+
+ /* ---------- laptops ---------- */
+ {id:'framework',set:'laptop',kind:'Laptop modern',title:'Laptop modern: Framework Laptop 13 (AMD, 2023)',img:'img/foto/laptop-framework.jpg',w:1600,h:1205,
+  note:'Laptop tipis 13 inci yang dirancang supaya mudah diperbaiki: semua sekrup bisa dibuka, baterai, SSD, Wi-Fi, dan port bisa diganti sendiri. Panel bawah sudah dilepas dan layar ada di atas foto. Bandingkan betapa padatnya semua komponen dibanding PC.',
+  credit:['Framework Laptop 13 - 2023 AMD Ryzen - Internal motherboard and component view.jpg','Ogidya','CC BY 4.0',CM+'Framework_Laptop_13_-_2023_AMD_Ryzen_-_Internal_motherboard_and_component_view.jpg'],
+  m:[[33.9,38.7,6.5,11,'Kipas (blower)','Kipas laptop berbentuk blower: menyedot udara dari bawah lalu meniupkannya ke samping melewati sirip heatsink tipis, lalu keluar lewat celah engsel.'],
+     [46.9,23.5,14,4,'Sirip pendingin dan heatpipe','Heatpipe (pipa hitam melengkung) membawa panas dari CPU ke deretan sirip tipis ini, lalu kipas meniup udara melewati sirip dan keluar lewat celah engsel. Satu heatpipe dan satu kipas mendinginkan CPU sekaligus grafis bawaannya.'],
+     [58.6,38.7,2.6,11,'Posisi CPU (di bawah pelat heatpipe)','Prosesor AMD Ryzen 7040 ada di bawah pelat ini. Sekrup pelatnya bernomor 1, 2, 3: dibuka dan dikencangkan sesuai urutan supaya tekanannya rata. CPU laptop disolder, tidak bisa diganti.'],
+     [69.5,39,10,13,'Pelat pelindung mainboard','Pelat hitam dengan stiker informasi mainboard (AMD Ryzen 7040 series). Pelindung seperti ini menutup komponen di bawahnya dari sentuhan dan listrik statis.'],
+     [43.8,55.3,10.5,3.5,'SSD M.2 2280 NVMe','Lexar NM790, PCIe Gen4. Ukurannya sama dengan SSD di PC (2280), jadi SSD laptop modern bisa dipakai di PC dan sebaliknya.'],
+     [83.9,56.4,3.5,4.5,'Kartu Wi-Fi M.2','Kartu kecil (M.2 2230, key E) untuk Wi-Fi dan Bluetooth, dengan dua kabel antena tipis yang menuju layar.'],
+     [56,55.5,2.5,4,'Lokasi baterai RTC (CMOS)','Stiker di sini menandai tempat baterai RTC opsional, pengganti baterai koin CMOS di PC.'],
+     [54.2,79.5,33,15,'Baterai 55 Wh','Sel lithium-ion yang mengisi hampir separuh ruang. Kapasitas tertulis di label: 55,0 Wh. Makin besar Wh, makin lama tahan. Baterai yang menggembung harus segera diganti.'],
+     [26.9,60.9,3,2.5,'Konektor baterai','Di labelnya tertulis "Unplug connector before removing battery". Selalu cabut konektor ini dulu sebelum menyentuh komponen lain di laptop.'],
+     [14.6,79.5,4,14,'Speaker','Speaker kecil 2 × 2 W di kiri dan kanan baterai.'],
+     [22.4,38,1.8,12,'Konektor port modular (USB-C)','Khusus Framework: port di samping berupa kartu kecil yang bisa dicabut dan ditukar (USB-C, USB-A, HDMI, dan lain-lain).'],
+     [57.3,17.3,22,3,'Kabel layar dan antena','Kabel tipis yang lewat di engsel menuju layar: sinyal gambar, webcam, dan antena Wi-Fi. Mudah putus kalau engselnya rusak.']]},
+ {id:'asusgl',set:'laptop',kind:'Laptop gaming',title:'Laptop gaming: ASUS ROG GL553VD (2017)',img:'img/foto/laptop-asusgl.jpg',w:1600,h:1200,
+  note:'Laptop gaming 15,6 inci dengan kartu grafis terpisah. Lebih tebal dari laptop biasa karena butuh pendingin lebih besar, dan masih punya ruang untuk HDD 2,5 inci dan DVD. Foto diambil miring, dengan panel bawah dilepas.',
+  credit:['InsideOfAAsusGL553VDByDesignermadsen-df9ac2q.jpg','Designermadsen','CC BY-SA 4.0',CM+'InsideOfAAsusGL553VDByDesignermadsen-df9ac2q.jpg'],
+  m:[[17.2,62.5,13,15,'Kipas dan sirip pendingin (merah)','Kipas blower meniup udara panas keluar melewati sirip merah di samping. Debu yang menyumbat sirip ini adalah penyebab utama laptop gaming kepanasan.'],
+     [31.3,44.4,18,6,'Heatpipe tembaga','Dua heatpipe membawa panas dari CPU dan GPU ke sirip kipas. Laptop gaming butuh heatpipe lebih banyak karena GPU-nya ikut panas.'],
+     [40.6,55.6,10,13,'Area CPU dan GPU','CPU dan GPU (GeForce GTX 1050) ada di bawah pelat pendingin dan pita hitam ini. Keduanya disolder ke mainboard, jadi tidak bisa di-upgrade.'],
+     [30.7,33.7,12,7,'RAM SO-DIMM','RAM laptop. Satu keping terlihat dengan chip memorinya, satu lagi tertutup pelindung hitam. Bisa di-upgrade.'],
+     [48.7,31.3,3.5,10,'SSD M.2 (Phison)','SSD NVMe tempat Windows. Laptop ini masih punya HDD juga, jadi file besar disimpan di HDD.'],
+     [65.6,26.4,12,9,'HDD 2,5 inci','Hard disk laptop dalam bracket logam. Bisa diganti SSD SATA 2,5 inci untuk upgrade murah.'],
+     [69.3,57,17,17,'DVD writer','Drive optik slim. Laptop modern sudah tidak punya DVD, tempatnya dipakai untuk baterai yang lebih besar.'],
+     [46.9,84.5,30,6,'Baterai','Baterai panjang di bagian depan laptop.'],
+     [49.5,74.3,3,4,'Kartu Wi-Fi','Kartu Wi-Fi dan Bluetooth M.2 dengan kabel antena.'],
+     [10.9,38.2,3,12,'Port samping','USB, HDMI, dan LAN menempel langsung di mainboard. Kalau port ini rusak karena tercabut paksa, perbaikannya harus menyolder mainboard.'],
+     [88.5,88.9,5,6,'Engsel','Engsel layar. Engsel yang longgar atau retak termasuk kerusakan paling umum di laptop sewa.']]},
+ {id:'latitude',set:'laptop',kind:'Laptop bisnis',title:'Laptop bisnis: Dell Latitude 3450 (2015)',img:'img/foto/laptop-latitude.jpg',w:1600,h:1200,
+  note:'Laptop kantor 14 inci dari lini bisnis Dell. Jenis ini yang biasa diadakan dan disewakan ke perusahaan: rapi, mudah dibuka, dan bagian yang sering diganti (RAM, HDD, baterai, Wi-Fi) langsung terlihat begitu panel bawah dilepas.',
+  credit:['Dell Latitude 3450 inside.jpg','Chris Sack','CC BY-SA 2.0',CM+'Dell_Latitude_3450_inside.jpg'],
+  m:[[12.5,32.6,4,7,'Kartu Wi-Fi (WLAN)','Kartu Wi-Fi M.2 dengan dua kabel antena. Bisa diganti ke Wi-Fi yang lebih baru.'],
+     [27.9,32.6,10.5,6.5,'RAM SO-DIMM terpasang','Satu keping RAM laptop DDR3L. Chip memorinya terlihat di atas papan hijau-biru.'],
+     [24.5,48.6,11,6,'Slot RAM kosong (DIMM B)','Tertulis di papan: "DIMM B, DDR3L ONLY, LOW VOLTAGE". Artinya slot ini hanya menerima DDR3L bertegangan rendah, bukan DDR3 biasa. Contoh nyata kenapa label slot harus dibaca.'],
+     [30.2,20.8,18,5,'Heatpipe tembaga','Membawa panas dari CPU ke kipas di kanan atas.'],
+     [72.4,25,9,13,'Kipas','Kipas blower yang membuang panas lewat celah di belakang. Bersihkan tiap 6–12 bulan.'],
+     [20.8,70.1,15,15,'Bay HDD 2,5 inci','Tempat hard disk (tertulis HDD di bawahnya). Upgrade paling terasa untuk laptop seperti ini: ganti HDD dengan SSD SATA 2,5 inci.'],
+     [11.5,50,3,5,'Kabel SATA fleksibel','Kabel pipih dari hard disk ke mainboard. Konektornya kecil dan rapuh, jadi dibuka pelan-pelan.'],
+     [66.1,70.1,29,17,'Baterai 58 Wh','Kapasitas 58 Wh tertera di label. Di laptop bisnis, baterai sering bisa dilepas dengan beberapa sekrup saja.'],
+     [92.2,36.1,3,2.5,'Label ukuran sekrup','Dell mencetak ukuran sekrup (M2.5×5) di dekat lubangnya, supaya sekrup tidak tertukar saat dipasang lagi.']]},
 ];
 
 const root=document.getElementById('fotoList'); if(!root) return;
+const SET=root.dataset.set||'pc';
 const EN=document.documentElement.lang==='en', t=(i,e)=>EN?e:i, BASE=window.BASE||'';
 if(EN&&window.FOTO_EN) PHOTOS.forEach(p=>{const e=window.FOTO_EN[p.id]; if(!e) return; p.kindLabel=e.kind; p.title=e.title; p.note=e.note; p.m.forEach((m,i)=>{ if(e.m[i]){ m[4]=e.m[i][0]; m[5]=e.m[i][1]; } });});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-root.innerHTML=PHOTOS.map(p=>`
+root.innerHTML=PHOTOS.filter(p=>(p.set||'pc')===SET).map(p=>`
 <section class="lesson annot" id="${p.id}">
-  <header><div class="eyebrow"><span class="pill ${p.kind==='Rakitan'?'rilis':'info'}">${p.kindLabel||p.kind}</span></div><h2>${esc(p.title)}</h2><p>${esc(p.note)}</p></header>
+  <header><div class="eyebrow"><span class="pill ${p.kind==='Rakitan'?'rilis':p.set==='laptop'?'rumor':'info'}">${p.kindLabel||p.kind}</span></div><h2>${esc(p.title)}</h2><p>${esc(p.note)}</p></header>
   <div class="annot-grid">
     <div style="min-width:0">
       <div class="annot-fig" style="aspect-ratio:${p.w}/${p.h}">

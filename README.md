@@ -12,7 +12,8 @@ Situs statis biasa (HTML, CSS, JavaScript): tidak perlu instal apa pun dan tidak
 | Halaman | File (ID) | File (EN) | Isi |
 |---|---|---|---|
 | Bedah 3D | `index.html` | `en/index.html` | Model PC 3D yang bisa diputar dan dibongkar, 10 komponen dengan foto asli, penjelasan lengkap, dan harga |
-| Foto Asli | `foto.html` | `en/foto.html` | Foto asli motherboard dan isi PC rakitan dan build-up (Dell, Lenovo) dengan lingkaran merah bernomor |
+| Foto PC | `foto.html` | `en/foto.html` | Foto asli motherboard dan isi PC rakitan dan build-up (Dell, Lenovo) dengan lingkaran merah bernomor |
+| Foto Laptop | `laptop.html` | `en/laptop.html` | Foto asli isi laptop modern (Framework 13), gaming (ASUS ROG), dan bisnis (Dell Latitude) dengan lingkaran merah bernomor |
 | Mulai dari nol | `dasar.html` | `en/dasar.html` | Dasar komputer untuk pemula |
 | Port & Penyimpanan | `port.html` | `en/port.html` | HDD, SSD, M.2, USB A/B/C/micro, HDMI, DisplayPort, VGA, DVI, LAN, audio, kabel internal |
 | Mode Rakit | `rakit.html` | `en/rakit.html` | Simulasi merakit dengan cek kompatibilitas (socket, DDR4/DDR5, slot PCIe, watt PSU) |
