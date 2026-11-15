@@ -91,7 +91,7 @@ if(document.getElementById('psuForm')){
   window.CPUS.forEach(([n,w],i)=>cpuS.add(new Option(`${n} · ${w} W`,i)));
   window.GPUS.forEach(([n,w],i)=>gpuS.add(new Option(w?`${n} · ${w} W`:n,i)));
   cpuS.value=2; gpuS.value=4;
-  const COL={cpu:'#C4602A',gpu:'#2F7D5B',mobo:'#5A6B7A',ram:'#9A7BC9',sto:'#C99A2E',cool:'#3E8FB0'};
+  const COL={cpu:'#D7262D',gpu:'#2B7BD6',mobo:'#5A6B7A',ram:'#9A7BC9',sto:'#C99A2E',cool:'#3E8FB0'};
   function calc(){
     const [cn,cw]=window.CPUS[+cpuS.value], [gn,gw,grec]=window.GPUS[+gpuS.value];
     const ram=+$('pRam').value*5, sto=(+$('pNvme').value)*7+(+$('pHdd').value)*8;

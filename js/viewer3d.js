@@ -206,7 +206,7 @@ const labelBtns={};
 PARTS.forEach((p,i)=>{ const b=document.createElement('button'); b.type='button'; b.className='lbl'; b.dataset.id=p.id; b.innerHTML=`<i>${i+1}</i><span>${p.name}</span>`; b.onclick=()=>window.__select(p.id,true); labelsEl.appendChild(b); labelBtns[p.id]=b; });
 labelBtns[window.__getCurrent()].classList.add('on');
 
-const HL=new THREE.Color(0xE58C52);
+const HL=new THREE.Color(0xFF4D55);
 function highlight(id){
   Object.values(parts).forEach(g=>g.traverse(o=>{ if(!o.isMesh||!o.material.emissive||o.userData.glass) return; const on=g.userData.id===id && id!=='case'; const u=o.material.userData;
     if(on){ o.material.emissive.copy(HL); o.material.emissiveIntensity=0.28; } else { o.material.emissive.copy(u.emi); o.material.emissiveIntensity=u.ei; } }));

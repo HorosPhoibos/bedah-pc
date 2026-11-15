@@ -7,22 +7,22 @@ img,svg,canvas{max-width:100%}
 [hidden]{display:none!important}
 /* Layout: a workbench — 3D unit on the left, an inventory-tag style spec sheet on the right; lessons stacked below. */
 :root{
-  --bg:#EDF0F2; --surface:#FFFFFF; --sunk:#E2E7EB; --ink:#14191D; --muted:#56636D; --line:#CFD6DC;
-  --copper:#A4501A; --copper-soft:#F3E3D6; --pcb:#1E6A4E; --pcb-soft:#DCEDE5; --warn:#8A5A00; --warn-soft:#FBF0D6;
-  --stage:#DCE2E6;
+  --bg:#F5F8FC; --surface:#FFFFFF; --sunk:#EAF0F7; --ink:#0F1C2E; --muted:#4E5E73; --line:#D6DFEA;
+  --copper:#C8161D; --copper-soft:#FDECEC; --pcb:#1565C0; --pcb-soft:#E6F0FB; --warn:#8A5A00; --warn-soft:#FFF4DA;
+  --stage:#E7EEF7; --on-accent:#FFFFFF;
   --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
   --r:10px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E1215; --surface:#161B20; --sunk:#1D242A; --ink:#E5EAEE; --muted:#93A0AA; --line:#2A333B;
-  --copper:#E58C52; --copper-soft:#3A271B; --pcb:#5FC59A; --pcb-soft:#16302A; --warn:#E8B44C; --warn-soft:#33290F;
-  --stage:#12171B; color-scheme:dark }}
+  --bg:#0C1424; --surface:#131D30; --sunk:#1A263C; --ink:#E6ECF5; --muted:#9AA9BE; --line:#24324A;
+  --copper:#FF5A5F; --copper-soft:#3A1820; --pcb:#6CB4F5; --pcb-soft:#13294A; --warn:#F0B94A; --warn-soft:#33280E;
+  --stage:#0F1A2E; --on-accent:#0C1424; color-scheme:dark }}
 :root[data-theme="dark"]{
-  --bg:#0E1215; --surface:#161B20; --sunk:#1D242A; --ink:#E5EAEE; --muted:#93A0AA; --line:#2A333B;
-  --copper:#E58C52; --copper-soft:#3A271B; --pcb:#5FC59A; --pcb-soft:#16302A; --warn:#E8B44C; --warn-soft:#33290F;
-  --stage:#12171B; color-scheme:dark }
+  --bg:#0C1424; --surface:#131D30; --sunk:#1A263C; --ink:#E6ECF5; --muted:#9AA9BE; --line:#24324A;
+  --copper:#FF5A5F; --copper-soft:#3A1820; --pcb:#6CB4F5; --pcb-soft:#13294A; --warn:#F0B94A; --warn-soft:#33280E;
+  --stage:#0F1A2E; --on-accent:#0C1424; color-scheme:dark }
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
@@ -52,7 +52,7 @@ a{color:var(--copper)}
   display:flex;align-items:center;gap:6px;white-space:nowrap;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:background .15s,border-color .15s}
 .lbl i{font-style:normal;display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--sunk);font-size:10.5px}
 .lbl:hover,.lbl.on{border-color:var(--copper)}
-.lbl.on{background:var(--copper);color:#fff}
+.lbl.on{background:var(--copper);color:var(--on-accent)}
 .lbl.on i{background:rgba(255,255,255,.25)}
 .labels.hide-names .lbl span{display:none}
 .labels.hide-names .lbl{padding:4px}
@@ -64,7 +64,7 @@ a{color:var(--copper)}
 .controls input[type=checkbox]{accent-color:var(--copper);width:16px;height:16px}
 .btn{font:500 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:7px 12px;cursor:pointer}
 .btn:hover{border-color:var(--copper)}
-.btn.primary{background:var(--copper);border-color:var(--copper);color:#fff}
+.btn.primary{background:var(--copper);border-color:var(--copper);color:var(--on-accent)}
 
 /* spec sheet */
 .sheet{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;min-width:0}
@@ -291,7 +291,7 @@ footer ul{padding-left:18px;margin:6px 0}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px}
 .steps li{display:flex;gap:10px;align-items:flex-start}
 .steps li i{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font:700 11px var(--f-mono);font-style:normal;color:var(--muted);margin-top:1px}
-.steps li.done i{background:var(--pcb);border-color:var(--pcb);color:#fff}
+.steps li.done i{background:var(--pcb);border-color:var(--pcb);color:var(--on-accent)}
 .steps li.done{color:var(--muted)}
 .stat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .stat div{background:var(--sunk);border-radius:8px;padding:10px 12px}
@@ -435,3 +435,12 @@ footer ul{padding-left:18px;margin:6px 0}
 .brandfoot img{width:40px;height:40px;border-radius:8px;background:#fff;padding:3px;flex:none}
 .brandfoot a{color:var(--ink)}
 @media (max-width:720px){.site{display:grid;grid-template-columns:1fr auto}.site nav{grid-column:1/-1;grid-row:2}.langsw{margin-left:0}}
+
+/* ===== Mega Dinamika theme: brand red = highlights & primary actions, brand blue = labels & info ===== */
+body{font-size:16px;line-height:1.65}
+.eyebrow,.sec h3,.box h3{color:var(--pcb)}
+.site{border-bottom:2px solid var(--pcb)}
+.site nav a[aria-current=page]{background:var(--copper);color:var(--on-accent)}
+.langsw .on{background:var(--pcb);color:var(--on-accent)}
+.tabs button[aria-selected=true]{background:var(--copper);border-color:var(--copper);color:var(--on-accent)}
+.sheet-num{color:var(--copper)}
