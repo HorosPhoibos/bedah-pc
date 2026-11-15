@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Service Mode · Bedah PC</title>
+<meta name="description" content="A simulator for diagnosing the most common PC faults.">
+<link rel="alternate" hreflang="id" href="../servis.html"><link rel="alternate" hreflang="en" href="servis.html">
+<link rel="icon" type="image/png" href="../img/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>window.BASE='../';</script>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="brand" href="index.html"><img src="../img/brand/megadinamika.png" alt="" width="30" height="30"><span class="bt"><b>Bedah <span>PC</span></b><small>by @cvmegadinamika</small></span></a><nav aria-label="Pages"><a href="index.html">3D Teardown</a><a href="foto.html">Real Photos</a><a href="dasar.html">Start from zero</a><a href="port.html">Ports & Storage</a><a href="rakit.html">Build Mode</a><a href="servis.html" aria-current="page">Service Mode</a><a href="pilih.html">Choosing</a><a href="belajar.html">Learn</a><a href="bisnis.html">Business</a><a href="glosarium.html">Glossary</a></nav><div class="langsw" aria-label="Bahasa / Language"><a href="../servis.html" hreflang="id" lang="id">ID</a><span class="on" aria-current="true">EN</span></div></header>
+<main>
+<header class="pagehead"><div class="eyebrow">Simulator</div><h1>Service Mode</h1><p>Pick a case, power on the PC, watch the symptoms (fans, debug lights, beeps, the monitor), then switch it off and inspect the suspect part. This is how technicians think.</p></header><div class="scenarios" id="scenarios" aria-label="Choose a case"></div>
+<div class="bay">
+  <div style="min-width:0">
+    <div class="rigsvg"><svg id="rig" viewBox="0 0 760 440" role="img" aria-label="PC, rear panel, and monitor"></svg></div>
+    <div class="powerbtn" style="margin-top:12px">
+      <button class="btn primary big" id="powerBtn" type="button">⏻ Power on</button>
+      <button class="btn big" id="loadBtn" type="button" disabled>▶ Run a heavy game</button>
+      <button class="btn" id="muteBtn" type="button">🔊 Sound on</button>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted);margin:8px 0 0">The beeps are synthesised. Every BIOS brand has its own beep patterns, so always check the motherboard manual. Many modern motherboards have no speaker and use debug lights instead.</p>
+  </div>
+  <aside class="panel">
+    <div class="box"><h3>Client report</h3><p id="symptom" style="margin:0;font-weight:600"></p></div>
+    <div class="box" id="inspect"></div>
+    <div id="lesson" hidden></div>
+    <div class="box"><h3>Technician's log</h3><div class="log" id="log" aria-live="polite"></div></div>
+  </aside>
+</div>
+
+<section class="lesson" id="pola">
+  <header><div class="eyebrow">How technicians think</div><h2>No picture: the order of checks</h2><p>Technicians don't guess. They start with what's easiest and most common, then narrow down until they find the cause.</p></header>
+  <div class="flow">
+    <div class="q"><b>1. When the power button is pressed, does anything turn on (fans, lights)?</b><div class="a">
+      <div><em>Nothing at all</em> → check the wall socket, the switch on the back of the PSU, the power cord, and the case power button cable to the front panel header. If all of those are fine, the PSU has probably failed.</div>
+      <div><em>Yes, the fans spin</em> → go to question 2.</div></div></div>
+    <div class="q"><b>2. Does the monitor say "No Signal"?</b><div class="a">
+      <div><em>Yes</em> → check the monitor cable: it must be in the graphics card's port if there is a GPU. Check the monitor's input (HDMI 1/2/DP) is correct.</div>
+      <div><em>The monitor is completely off</em> → check the monitor's power cable and its power button.</div></div></div>
+    <div class="q"><b>3. Which debug light stays on?</b><div class="a">
+      <div><em>CPU</em> → 8-pin EPS cable, CPU not supported by the BIOS, bent socket pins.</div>
+      <div><em>DRAM</em> → reseat the RAM, try one stick in slot A2, clean the contacts. Wait for memory training first if the DDR5 is new.</div>
+      <div><em>VGA</em> → reseat the GPU, check the GPU power cable, try another port.</div>
+      <div><em>BOOT</em> → the SSD isn't detected or the boot order is wrong. Enter the BIOS to check.</div></div></div>
+    <div class="q"><b>4. Still not found?</b><div class="a">
+      <div><em>Minimal boot</em> → remove everything except the CPU, 1 RAM stick, and the cooler. Use integrated graphics if available. Add components back one at a time.</div>
+      <div><em>Swap with known-good parts</em> → technicians keep spare RAM, a PSU, and a GPU that are known to work, for testing.</div></div></div>
+  </div>
+</section>
+
+<section class="lesson" id="alat">
+  <header><div class="eyebrow">Equipment</div><h2>What's in a technician's bag</h2></header>
+  <div class="cols">
+    <div class="card"><h3>Physical tools</h3><ul><li>PH2 Phillips screwdriver (case, motherboard) and PH0/PH1 (M.2, laptops)</li><li>Anti-static (ESD) wrist strap or mat</li><li>Anti-static brush and a blower / compressed air for dust</li><li>99% isopropyl alcohol (IPA) and lint-free wipes</li><li>Thermal paste</li><li>Cable ties and cutters</li><li>Torch or headlamp</li><li>Plastic spudger for opening laptops</li></ul></div>
+    <div class="card"><h3>Test gear</h3><ul><li>A Windows installer flash drive (made with the Media Creation Tool or Ventoy)</li><li>PSU tester or multimeter</li><li>Known-good spare parts: 1 DDR4 stick, 1 DDR5 stick, a PSU, and a small GPU</li><li>Spare HDMI and DisplayPort cables</li><li>USB to SATA/NVMe adapter for reading drives outside the PC</li></ul></div>
+    <div class="card"><h3>Diagnostic software (free)</h3><ul><li><b>CPU-Z</b>: CPU, motherboard, and per-slot RAM details</li><li><b>HWiNFO</b>: every temperature, voltage, and fan speed</li><li><b>CrystalDiskInfo</b>: SSD/HDD health (Good / Caution / Bad)</li><li><b>OCCT</b> and <b>Cinebench</b>: CPU, GPU, and PSU stress tests</li><li><b>MemTest86</b> or <b>Windows Memory Diagnostic</b> (mdsched): RAM checks</li><li><b>Event Viewer</b>: Windows error logs, for example "Kernel-Power 41" when a PC shuts off suddenly</li><li><b>DDU</b>: cleans out a problematic GPU driver</li></ul></div>
+    <div class="card"><h3>Safety</h3><ul><li>Switch off, unplug the power cord, then press the power button once to drain leftover power before opening the case.</li><li>Never open a PSU or a monitor. Their capacitors can hold a dangerous charge.</li><li>A swollen laptop battery: don't press, puncture, or charge it. Remove it carefully and dispose of it as hazardous waste.</li><li>Use earthed sockets (with a metal grounding contact) so the case can't give a shock and components are safer.</li></ul></div>
+  </div>
+</section>
+<div class="next"><a href="rakit.html"><small>← Previous</small><b>Build Mode</b></a><a href="pilih.html" style="text-align:right"><small>Next →</small><b>Choosing</b></a></div>
+</main>
+<footer>
+
+<p>Bedah PC is a personal learning resource. Prices are Indonesian market estimates as of November 2026 and can change quickly. Always double-check before quoting. Terms with a dotted underline can be tapped to see their meaning, or open the <a href="glosarium.html">Glossary</a>.</p>
+<p class="brandfoot"><img src="../img/brand/megadinamika.png" alt="" width="40" height="40"><span>Brought to you by <a href="https://megadinamika.com/" target="_blank" rel="noopener"><b>CV Mega Dinamika</b></a> · @cvmegadinamika</span></p>
+</footer>
+</div>
+<script src="../js/servis.js"></script>
+<script src="../js/glossary.en.js"></script>
+<script src="../js/glossary.js"></script>
+</body>
+</html>

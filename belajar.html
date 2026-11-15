@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Belajar · Bedah PC</title>
+<meta name="description" content="Kabel, laptop, software, dan kuliah arsitektur komputer.">
+<link rel="alternate" hreflang="id" href="belajar.html"><link rel="alternate" hreflang="en" href="en/belajar.html">
+<link rel="icon" type="image/png" href="img/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>window.BASE='';</script>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="brand" href="index.html"><img src="img/brand/megadinamika.png" alt="" width="30" height="30"><span class="bt"><b>Bedah <span>PC</span></b><small>oleh @cvmegadinamika</small></span></a><nav aria-label="Halaman"><a href="index.html">Bedah 3D</a><a href="foto.html">Foto Asli</a><a href="dasar.html">Mulai dari nol</a><a href="port.html">Port & Penyimpanan</a><a href="rakit.html">Mode Rakit</a><a href="servis.html">Mode Servis</a><a href="pilih.html">Memilih</a><a href="belajar.html" aria-current="page">Belajar</a><a href="bisnis.html">Bisnis</a><a href="glosarium.html">Glosarium</a></nav><div class="langsw" aria-label="Bahasa / Language"><span class="on" aria-current="true">ID</span><a href="en/belajar.html" hreflang="en" lang="en">EN</a></div></header>
+<main>
+<header class="pagehead"><div class="eyebrow">Pendalaman</div><h1>Belajar lebih dalam</h1><p>Setelah kenal komponennya, pahami cara semuanya bekerja bersama: kabel, laptop, software, dan isi kuliah dasar arsitektur komputer.</p></header><nav class="toc" aria-label="Isi halaman"><a href="#kabel">Kabel</a><a href="#laptop">Laptop</a><a href="#software">Software</a><a href="#kuliah">Kuliah mendalam</a></nav><section class="lesson" id="kabel">
+    <header>
+      <div class="eyebrow">Kabel</div>
+      <h2>Apa isi kabel, dan kenapa harganya beda jauh</h2>
+      <p>Dua kabel yang kelihatannya sama bisa berbeda harga 5×. Bedanya ada di dalam: bahan logam, ketebalan, pelindung, dan sertifikasi.</p>
+    </header>
+    <div class="cols">
+      <div class="card"><h3>Di dalam sebuah kabel</h3><ul><li><b>Konduktor</b>: kawat logam yang mengalirkan listrik atau sinyal, idealnya tembaga murni.</li><li><b>Isolasi</b>: plastik yang membungkus tiap kawat supaya tidak korsleting.</li><li><b>Pelindung (shielding)</b>: lapisan foil atau anyaman logam yang menahan gangguan sinyal dari luar. Penting di kabel data.</li><li><b>Jaket</b>: kulit luar yang melindungi dari tekukan dan gesekan.</li><li><b>Konektor</b>: kepala kabel. Kualitas penjepitnya menentukan awet tidaknya kabel.</li></ul></div>
+      <div class="card"><h3>Tembaga murni vs CCA</h3><p>Kabel murah sering memakai <span class="k">CCA</span> (Copper Clad Aluminium), yaitu aluminium yang dilapisi tipis tembaga. Hambatannya lebih tinggi, lebih mudah panas dan patah.</p><p>Kabel LAN CCA bisa membuat koneksi tidak stabil di jarak jauh dan tidak cocok untuk PoE (CCTV atau access point yang dayanya lewat kabel LAN). Untuk instalasi kantor, minta kabel <b>pure copper</b>.</p></div>
+      <div class="card"><h3>Ketebalan kawat (AWG)</h3><p>Angka AWG yang <b>lebih kecil</b> berarti kawat <b>lebih tebal</b>. Kabel power PSU berkualitas memakai 16–18 AWG. Kawat yang terlalu tipis untuk arus besar bisa panas bahkan meleleh.</p><p>Inilah alasan konektor GPU 12V-2x6 harus dicolok sampai benar-benar masuk dan tidak boleh ditekuk tajam dekat kepalanya.</p></div>
+      <div class="card"><h3>Mahal belum tentu lebih bagus</h3><p>Sinyal HDMI, DisplayPort, dan USB itu digital, jadi hasilnya hanya ada dua: jalan atau tidak. Kabel HDMI bersertifikat seharga Rp150 rb menghasilkan gambar yang sama persis dengan kabel Rp1,5 jt.</p><p>Konektor berlapis emas hanya membantu anti-karat. Bayarlah untuk <b>sertifikasi dan versi</b>, bukan untuk merek atau kilau.</p></div>
+    </div>
+    <div class="tbox" style="margin-top:16px"><table class="dt">
+      <thead><tr><th>Kabel</th><th>Fungsi</th><th>Yang membedakan harga</th><th>Kisaran</th></tr></thead>
+      <tbody>
+        <tr><td><b>24-pin ATX</b>, <b>8-pin EPS</b></td><td>Listrik dari PSU ke motherboard dan CPU</td><td>Biasanya sudah termasuk PSU. Versi "sleeved" warna-warni hanya soal tampilan.</td><td class="num">bawaan PSU</td></tr>
+        <tr><td><b>PCIe 8-pin / 12V-2x6</b></td><td>Listrik ke GPU. 12V-2x6 sanggup sampai 600 W</td><td>Ketebalan kawat, kualitas pin konektor, standar ATX 3.1</td><td class="num">bawaan PSU</td></tr>
+        <tr><td><b>SATA</b> (data + power)</td><td>HDD dan SSD 2,5"</td><td>Hampir tidak ada perbedaan kecepatan, maksimal 6 Gbps</td><td class="num">Rp10–30 rb</td></tr>
+        <tr><td><b>Power cord</b> (C13)</td><td>Stopkontak ke PSU / monitor</td><td>Tebal kawat, wajib bertanda SNI</td><td class="num">Rp20–60 rb</td></tr>
+        <tr><td><b>HDMI</b></td><td>Monitor, TV, proyektor</td><td>Versi: HDMI 2.0 (4K 60 Hz) vs 2.1 Ultra High Speed 48 Gbps (4K 120 Hz). Cari label sertifikasi dengan QR.</td><td class="num">Rp50–300 rb</td></tr>
+        <tr><td><b>DisplayPort</b></td><td>Monitor gaming refresh tinggi</td><td>DP 1.4 vs DP 2.1 (UHBR). Kabel panjang butuh kualitas lebih baik.</td><td class="num">Rp80–400 rb</td></tr>
+        <tr><td><b>USB-C</b></td><td>Data, charger, monitor</td><td>Kabel bisa hanya USB 2.0 (480 Mbps) atau USB4 (40–80 Gbps). Daya 60 W vs 240 W (butuh chip e-marker).</td><td class="num">Rp30–500 rb</td></tr>
+        <tr><td><b>LAN Cat5e / Cat6 / Cat6a</b></td><td>Jaringan kantor</td><td>Cat5e dan Cat6: 1 Gbps (Cat6 bisa 10 Gbps sampai ±55 m). Cat6a: 10 Gbps sampai 100 m. Tembaga murni vs CCA, UTP vs STP berpelindung.</td><td class="num">Rp4–15 rb/m</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+<section class="lesson" id="laptop">
+    <header>
+      <div class="eyebrow">Laptop</div>
+      <h2>Komponennya sama, susunannya beda</h2>
+      <p>Laptop punya CPU, RAM, SSD, dan GPU yang sama fungsinya. Bedanya, semuanya dipadatkan di satu papan tipis dan berbagi pendingin yang kecil.</p>
+    </header>
+    <div class="cols">
+      <div class="card"><h3>Prosesor laptop</h3><p>Lihat huruf di belakang nama. <span class="k">U</span> hemat baterai untuk kerja kantor, <span class="k">H</span> / <span class="k">HX</span> bertenaga untuk gaming dan editing, <span class="k">V</span> / <span class="k">Lunar Lake</span> tipis dan irit. Contoh: Core Ultra 7 255H, Ryzen AI 7 350.</p><p>CPU laptop disolder ke papan, jadi tidak bisa diganti.</p></div>
+      <div class="card"><h3>RAM sering disolder</h3><p>Banyak laptop tipis memakai RAM <span class="k">LPDDR5X</span> yang menempel permanen. Artinya kapasitas saat beli adalah kapasitas selamanya. Laptop yang masih punya slot <span class="k">SO-DIMM</span> bisa di-upgrade.</p><p>Saran: kalau RAM-nya disolder, ambil minimal 16 GB sejak awal.</p></div>
+      <div class="card"><h3>GPU laptop lebih lemah</h3><p>RTX 5070 laptop tidak sekuat RTX 5070 desktop karena dibatasi daya dan panas. Lihat angka <span class="k">TGP</span> (watt) di spesifikasi: makin tinggi, makin kencang.</p></div>
+      <div class="card"><h3>Yang hanya ada di laptop</h3><ul><li>Baterai (Wh): makin besar, makin lama tahan.</li><li>Layar menyatu: cek resolusi, refresh rate, dan kecerahan (nits).</li><li>Adaptor daya menggantikan PSU.</li><li>Keyboard, touchpad, webcam, Wi-Fi sudah terpasang.</li></ul></div>
+    </div>
+  </section>
+<section class="lesson" id="software">
+    <header>
+      <div class="eyebrow">Software</div>
+      <h2>Lapisan di atas hardware</h2>
+      <p>Hardware tidak bisa apa-apa tanpa software. Setiap lapisan bicara dengan lapisan di bawahnya. Klik lapisan untuk melihat penjelasannya.</p>
+    </header>
+    <div class="stack">
+      <div class="layers" id="layers"></div>
+      <div class="layer-detail" id="layerDetail"></div>
+    </div>
+    <h3 style="font-size:19px;margin:30px 0 12px">Apa yang terjadi saat tombol power ditekan</h3>
+    <ol class="boot">
+      <li><b>Listrik masuk</b>PSU menyalakan semua tegangan, motherboard memberi sinyal "power good".</li>
+      <li><b>Firmware UEFI jalan</b>Program kecil di chip motherboard bangun lebih dulu dari Windows.</li>
+      <li><b>Cek hardware (POST)</b>UEFI memeriksa CPU, RAM, dan GPU. Kalau RAM bermasalah, PC berbunyi bip atau lampu debug menyala.</li>
+      <li><b>Cari tempat boot</b>UEFI mencari SSD yang berisi sistem operasi, lalu menjalankan bootloader.</li>
+      <li><b>OS dimuat ke RAM</b>Kernel Windows/Linux disalin dari SSD ke RAM, lalu driver dimuat.</li>
+      <li><b>Layar login</b>OS siap. Aplikasi yang kamu buka akan disalin dari SSD ke RAM, lalu dikerjakan CPU.</li>
+    </ol>
+  </section>
+<section class="lesson" id="kuliah">
+    <header>
+      <div class="eyebrow">Kuliah mendalam</div>
+      <h2>Cara komputer benar-benar bekerja</h2>
+      <p>Bagian ini adalah inti mata kuliah Organisasi dan Arsitektur Komputer, diringkas. Kalau ini sudah paham, kamu bisa menjelaskan kenapa sebuah spesifikasi masuk akal, bukan sekadar menghafal angka.</p>
+    </header>
+
+    <h3 style="font-size:19px;margin-bottom:6px">1. Hierarki memori: kenapa ada cache, RAM, dan SSD sekaligus</h3>
+    <p style="color:var(--muted);max-width:72ch;margin:0 0 14px">Makin dekat ke CPU, makin cepat tapi makin kecil dan mahal. Supaya terbayang, kita perlambat waktunya: anggap 1 nanodetik menjadi 1 detik.</p>
+    <div class="lat" id="lat"></div>
+    <p style="font-size:13px;color:var(--muted);margin-top:8px">Angka adalah orde besaran yang umum dipakai di buku teks, bukan hasil ukur satu produk. Skala batang logaritmik: tiap langkah ke kanan berarti 10× lebih lambat.</p>
+    <p style="max-width:72ch">Inilah alasan RAM penuh membuat PC terasa "hang". Windows terpaksa memindahkan data ke SSD (page file), yang ratusan kali lebih lambat dari RAM. Ini juga alasan HDD membuat Windows lambat: tiap file kecil butuh jarum fisik bergerak ke posisinya.</p>
+
+    <h3 style="font-size:19px;margin:30px 0 12px">2. Siklus kerja CPU</h3>
+    <ol class="boot">
+      <li><b>Fetch</b>CPU mengambil instruksi berikutnya dari memori (biasanya sudah ada di cache).</li>
+      <li><b>Decode</b>Instruksi diterjemahkan: ini penjumlahan, perbandingan, atau perintah ambil data?</li>
+      <li><b>Execute</b>Unit hitung (ALU) atau unit desimal (FPU) mengerjakannya.</li>
+      <li><b>Write back</b>Hasil disimpan ke register atau memori, lalu siklus mengulang miliaran kali per detik.</li>
+    </ol>
+    <p style="max-width:72ch;margin-top:14px">CPU modern mengerjakan banyak instruksi sekaligus secara bertumpuk (pipeline), menebak cabang program sebelum terjadi (branch prediction), dan memiliki beberapa core yang masing-masing menjalankan siklus ini sendiri. Itulah sebabnya GHz saja tidak cukup untuk membandingkan CPU dari generasi berbeda. Yang menentukan adalah IPC (instruksi per siklus) × GHz × jumlah core yang benar-benar dipakai aplikasi.</p>
+
+    <div class="cols" style="margin-top:26px">
+      <div class="card"><h3>3. Transistor dan "nanometer"</h3><p>CPU berisi puluhan miliar transistor, saklar mikroskopis yang bernilai 0 atau 1. Proses pembuatannya diberi nama seperti 4 nm, 3 nm, atau Intel 18A.</p><p>Angka itu sekarang hanya <b>nama generasi pabrik</b>, bukan ukuran asli transistor. Contoh: Ryzen 9000 dibuat di TSMC N4P, Core Ultra 200S memakai TSMC N3B, dan laptop Core Ultra Series 3 (Panther Lake) memakai Intel 18A. Proses yang lebih baru umumnya lebih hemat listrik.</p></div>
+      <div class="card"><h3>4. Jalur PCIe</h3><p>Komponen cepat berkomunikasi lewat jalur PCIe. Satu jalur (lane) kira-kira:</p><ul><li>Gen3 ≈ 1 GB/s</li><li>Gen4 ≈ 2 GB/s</li><li>Gen5 ≈ 4 GB/s</li></ul><p>GPU memakai 16 jalur (x16), SSD NVMe memakai 4 jalur (x4). Jadi NVMe Gen4 x4 maksimal ±8 GB/s, cocok dengan angka ±7.000 MB/s di kotaknya.</p></div>
+      <div class="card"><h3>5. Bit vs byte</h3><p>1 byte = 8 bit. Kecepatan internet ditulis dalam <b>bit</b> (Mbps), ukuran file dalam <b>byte</b> (MB).</p><p>Internet 100 Mbps berarti download maksimal ±12,5 MB/s. Ini sering membuat klien merasa "internetnya tidak sesuai iklan", padahal hitungannya benar.</p></div>
+      <div class="card"><h3>6. Kenapa SSD 1 TB terbaca 931 GB</h3><p>Pabrik menghitung 1 TB = 1.000.000.000.000 byte. Windows menghitung dengan pangkat 2 (1 GB = 1.073.741.824 byte). Hasilnya 1 TB terbaca ±931 GB.</p><p>Tidak ada kapasitas yang hilang atau dicuri. Pertanyaan ini sangat sering muncul dari pembeli.</p></div>
+      <div class="card"><h3>7. Watt = Volt × Ampere</h3><p>Komponen PC hampir semua berjalan di jalur 12 V. GPU 360 W berarti menarik ±30 ampere di 12 V. Arus sebesar itu yang membuat kualitas kabel dan konektor penting.</p></div>
+      <div class="card"><h3>8. Bottleneck</h3><p>Sistem hanya secepat bagian terlemahnya. GPU kelas atas dengan CPU lama: GPU menunggu CPU. CPU kencang dengan RAM 1 keping: CPU menunggu data. Rakitan yang baik itu <b>seimbang</b>, bukan satu komponen super mahal.</p></div>
+    </div>
+  </section><div class="next"><a href="pilih.html"><small>← Sebelumnya</small><b>Memilih</b></a><a href="bisnis.html" style="text-align:right"><small>Berikutnya →</small><b>Bisnis</b></a></div>
+</main>
+<footer>
+
+<p>Bedah PC adalah bahan belajar pribadi. Harga adalah perkiraan pasar Indonesia per November 2026 dan bisa berubah cepat. Selalu cek ulang sebelum memberi penawaran. Istilah bergaris titik-titik bisa diketuk untuk melihat artinya, atau buka <a href="glosarium.html">Glosarium</a>.</p>
+<p class="brandfoot"><img src="img/brand/megadinamika.png" alt="" width="40" height="40"><span>Dipersembahkan oleh <a href="https://megadinamika.com/" target="_blank" rel="noopener"><b>CV Mega Dinamika</b></a> · @cvmegadinamika</span></p>
+</footer>
+</div>
+<script src="js/data.js"></script><script src="js/app.js"></script>
+
+<script src="js/glossary.js"></script>
+</body>
+</html>

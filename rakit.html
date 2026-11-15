@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Mode Rakit · Bedah PC</title>
+<meta name="description" content="Simulasi merakit PC dengan cek kompatibilitas fisik.">
+<link rel="alternate" hreflang="id" href="rakit.html"><link rel="alternate" hreflang="en" href="en/rakit.html">
+<link rel="icon" type="image/png" href="img/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>window.BASE='';</script>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="brand" href="index.html"><img src="img/brand/megadinamika.png" alt="" width="30" height="30"><span class="bt"><b>Bedah <span>PC</span></b><small>oleh @cvmegadinamika</small></span></a><nav aria-label="Halaman"><a href="index.html">Bedah 3D</a><a href="foto.html">Foto Asli</a><a href="dasar.html">Mulai dari nol</a><a href="port.html">Port & Penyimpanan</a><a href="rakit.html" aria-current="page">Mode Rakit</a><a href="servis.html">Mode Servis</a><a href="pilih.html">Memilih</a><a href="belajar.html">Belajar</a><a href="bisnis.html">Bisnis</a><a href="glosarium.html">Glosarium</a></nav><div class="langsw" aria-label="Bahasa / Language"><span class="on" aria-current="true">ID</span><a href="en/rakit.html" hreflang="en" lang="en">EN</a></div></header>
+<main>
+<header class="pagehead"><div class="eyebrow">Simulasi</div><h1>Mode Rakit</h1><p>Seret komponen dari meja ke slotnya di motherboard. Di HP, ketuk komponen lalu ketuk slotnya. Komponen yang tidak cocok akan ditolak beserta alasan fisiknya, persis seperti di dunia nyata.</p></header><div class="rig">
+  <div style="min-width:0">
+    <div class="boardwrap"><svg id="board" viewBox="0 0 740 740" role="img" aria-label="Gambar motherboard ATX dengan slot-slotnya"></svg></div>
+    <p style="font-size:12.5px;color:var(--muted);margin:8px 0 18px">Gambar mengikuti ukuran motherboard ATX asli (244 × 305 mm). Posisi lekukan RAM di slot dibuat ilustratif. Ketuk komponen yang sudah terpasang untuk melepasnya.</p>
+    <h3 style="font-size:17px;margin-bottom:10px">Meja komponen</h3>
+    <div class="tray" id="tray"></div>
+  </div>
+  <aside class="panel">
+    <div class="box"><h3>Pilih dasar</h3><div style="display:grid;gap:10px">
+      <label class="sel" for="boardSel">Motherboard<select id="boardSel"></select></label>
+      <label class="sel" for="psuSel">Power supply<select id="psuSel"></select></label>
+      <button class="btn" id="resetRig" type="button">Kosongkan motherboard</button></div></div>
+    <div class="box"><h3>Langkah</h3><ol class="steps" id="steps"></ol></div>
+    <div class="box"><h3>Ringkasan rakitan</h3><div class="stat">
+      <div><small>Total biaya</small><b id="sCost">–</b></div><div><small>Daya maksimal</small><b id="sWatt">–</b></div>
+      <div><small>PSU disarankan</small><b id="sRec">–</b></div><div><small>Kelas</small><b id="sTier" style="font-size:16px">–</b></div></div>
+      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">Biaya sudah termasuk motherboard, PSU, dan casing + kipas (Rp1 jt). Harga perkiraan November 2026.</p></div>
+    <div id="alerts" style="display:grid;gap:8px"></div>
+    <div class="box"><h3>Coba kesalahan umum</h3><div class="shop">
+      <button class="btn" type="button" data-try="ddr4">RAM DDR4 ke board DDR5</button>
+      <button class="btn" type="button" data-try="socket">CPU Intel ke socket AMD</button>
+      <button class="btn" type="button" data-try="x1">GPU ke slot pendek</button>
+      <button class="btn" type="button" data-try="cooler">Pendingin tanpa CPU</button>
+      <button class="btn" type="button" data-try="psu">RTX 5080 dengan PSU 550 W</button></div></div>
+  </aside>
+</div>
+<div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+
+<section class="lesson" id="urutan">
+  <header><div class="eyebrow">Urutan teknisi</div><h2>Cara merakit PC sungguhan, langkah demi langkah</h2><p>Urutan ini dipakai teknisi supaya tidak ada yang harus dibongkar ulang. Di simulasi di atas, langkah 2–5 yang kamu latih.</p></header>
+  <ol class="check">
+    <li><b>Siapkan meja dan buang listrik statis</b><span>Meja kayu atau karpet anti-statik, obeng Phillips PH2, dan pencahayaan terang. Sentuh logam casing yang tidak dicat sebelum memegang komponen, atau pakai gelang anti-statik.</span></li>
+    <li><b>Pasang CPU di motherboard</b><span>Masih di atas kotak motherboard, di luar casing. Cocokkan segitiga emas, letakkan tanpa ditekan, lalu tutup tuas.</span></li>
+    <li><b>Pasang SSD M.2</b><span>Sebelum pendingin dan GPU terpasang, karena slot M.2 sering tertutup keduanya.</span></li>
+    <li><b>Pasang RAM</b><span>Slot A2 dan B2 untuk dua keping. Tekan sampai klip berbunyi.</span></li>
+    <li><b>Pasang pendingin CPU</b><span>Pasang backplate atau bracket, oles thermal paste kalau belum ada, kencangkan sekrup menyilang, dan colok kabel kipas ke CPU_FAN.</span></li>
+    <li><b>Siapkan casing</b><span>Cek standoff sesuai lubang motherboard. Pasang I/O shield kalau belum menempel di motherboard.</span></li>
+    <li><b>Masukkan motherboard ke casing</b><span>Sejajarkan port belakang dengan lubangnya, lalu sekrup semua standoff. Jangan terlalu kencang.</span></li>
+    <li><b>Pasang PSU</b><span>Kipas PSU menghadap ke bawah kalau casing punya ventilasi bawah dengan filter.</span></li>
+    <li><b>Colok kabel daya</b><span>24-pin ke motherboard, 8-pin EPS ke CPU (pojok kiri atas, sering terlupa), lalu SATA power ke drive.</span></li>
+    <li><b>Pasang kartu grafis</b><span>Ke slot PCIe x16 paling atas, sekrup bracket-nya, lalu colok kabel daya PCIe atau 12V-2x6 sampai habis.</span></li>
+    <li><b>Colok kabel kecil casing</b><span>Tombol power dan reset (front panel header), USB depan, audio depan, dan kipas casing. Lihat manual untuk urutan pin front panel.</span></li>
+    <li><b>Nyalakan dan masuk BIOS</b><span>Kabel monitor ke port kartu grafis. Cek CPU, kapasitas RAM, dan SSD terdeteksi. Aktifkan XMP/EXPO. Tunggu sabar kalau DDR5 melakukan memory training.</span></li>
+    <li><b>Instal Windows dan driver</b><span>Dari flashdisk installer. Lalu driver chipset, driver GPU, dan Windows Update.</span></li>
+    <li><b>Uji dan rapikan</b><span>Stress test 15–30 menit sambil memantau suhu, cek semua port USB dan audio, lalu rapikan kabel.</span></li>
+  </ol>
+</section>
+
+<section class="lesson" id="kenapa">
+  <header><div class="eyebrow">Kompatibilitas fisik</div><h2>Kenapa komponen yang salah tidak bisa dipaksa</h2><p>Produsen sengaja membuat bentuk yang berbeda supaya komponen yang tidak cocok tidak bisa terpasang. Kalau sesuatu harus dipaksa, hampir pasti salah.</p></header>
+  <div class="cols">
+    <div class="card"><h3>RAM: posisi lekukan</h3><p>DDR4 dan DDR5 sama-sama 288 pin dan panjangnya sama, tapi lekukan di kakinya bergeser beberapa milimeter. Slot DDR5 punya tonjolan di posisi yang hanya cocok dengan DDR5. RAM laptop (SO-DIMM) bentuknya lebih pendek dan tidak muat di PC.</p></div>
+    <div class="card"><h3>CPU: socket</h3><p>AMD AM5 punya 1.718 titik kontak, Intel LGA1700 punya 1.700, Intel LGA1851 (Core Ultra 200S) punya 1.851. Ukuran dan tonjolan penguncinya berbeda. Bahkan socket yang ukurannya sama (LGA1700 vs LGA1851) tidak bisa saling dipakai.</p></div>
+    <div class="card"><h3>PCIe: panjang slot</h3><p>Slot x1 (±25 mm), x4, x8, dan x16 (±89 mm). Kartu pendek bisa masuk slot panjang (kartu Wi-Fi x1 bisa di slot x16), tapi tidak sebaliknya. Bentuk x16 belum tentu jalurnya x16. Lihat tulisan di dekat slot atau manual.</p></div>
+    <div class="card"><h3>M.2: lekukan dan panjang</h3><p>Lekukan M key untuk NVMe, B+M untuk SATA. Panjang 2230/2242/2280 harus cocok dengan posisi sekrup penahan, dan sebagian motherboard bisa digeser posisinya.</p></div>
+    <div class="card"><h3>Kabel daya: bentuk pin</h3><p>Setiap pin konektor berbentuk persegi atau persegi bersudut tumpul, sehingga kabel CPU dan GPU tidak bisa tertukar kalau tidak dipaksa. Kalau terasa seret, cek labelnya lagi.</p></div>
+    <div class="card"><h3>Ukuran: casing dan pendingin</h3><p>Kompatibilitas bukan hanya colokan. GPU 340 mm tidak muat di casing yang maksimal 320 mm. Pendingin setinggi 165 mm tidak muat di casing yang batasnya 160 mm. Selalu cek angka ini di spesifikasi.</p></div>
+  </div>
+</section>
+<div class="next"><a href="port.html"><small>← Sebelumnya</small><b>Port & Penyimpanan</b></a><a href="servis.html" style="text-align:right"><small>Berikutnya →</small><b>Mode Servis</b></a></div>
+</main>
+<footer>
+
+<p>Bedah PC adalah bahan belajar pribadi. Harga adalah perkiraan pasar Indonesia per November 2026 dan bisa berubah cepat. Selalu cek ulang sebelum memberi penawaran. Istilah bergaris titik-titik bisa diketuk untuk melihat artinya, atau buka <a href="glosarium.html">Glosarium</a>.</p>
+<p class="brandfoot"><img src="img/brand/megadinamika.png" alt="" width="40" height="40"><span>Dipersembahkan oleh <a href="https://megadinamika.com/" target="_blank" rel="noopener"><b>CV Mega Dinamika</b></a> · @cvmegadinamika</span></p>
+</footer>
+</div>
+<script src="js/rakit.js"></script>
+
+<script src="js/glossary.js"></script>
+</body>
+</html>

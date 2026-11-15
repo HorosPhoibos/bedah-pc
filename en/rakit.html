@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Build Mode · Bedah PC</title>
+<meta name="description" content="A PC building simulator with physical compatibility checks.">
+<link rel="alternate" hreflang="id" href="../rakit.html"><link rel="alternate" hreflang="en" href="rakit.html">
+<link rel="icon" type="image/png" href="../img/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>window.BASE='../';</script>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="brand" href="index.html"><img src="../img/brand/megadinamika.png" alt="" width="30" height="30"><span class="bt"><b>Bedah <span>PC</span></b><small>by @cvmegadinamika</small></span></a><nav aria-label="Pages"><a href="index.html">3D Teardown</a><a href="foto.html">Real Photos</a><a href="dasar.html">Start from zero</a><a href="port.html">Ports & Storage</a><a href="rakit.html" aria-current="page">Build Mode</a><a href="servis.html">Service Mode</a><a href="pilih.html">Choosing</a><a href="belajar.html">Learn</a><a href="bisnis.html">Business</a><a href="glosarium.html">Glossary</a></nav><div class="langsw" aria-label="Bahasa / Language"><a href="../rakit.html" hreflang="id" lang="id">ID</a><span class="on" aria-current="true">EN</span></div></header>
+<main>
+<header class="pagehead"><div class="eyebrow">Simulator</div><h1>Build Mode</h1><p>Drag components from the tray to their slots on the motherboard. On a phone, tap a component, then tap its slot. Parts that don't fit are rejected with the physical reason, just like in real life.</p></header><div class="rig">
+  <div style="min-width:0">
+    <div class="boardwrap"><svg id="board" viewBox="0 0 740 740" role="img" aria-label="Drawing of an ATX motherboard and its slots"></svg></div>
+    <p style="font-size:12.5px;color:var(--muted);margin:8px 0 18px">The drawing follows a real ATX motherboard's dimensions (244 × 305 mm). The RAM notch positions in the slots are illustrative. Tap an installed component to remove it.</p>
+    <h3 style="font-size:17px;margin-bottom:10px">Parts tray</h3>
+    <div class="tray" id="tray"></div>
+  </div>
+  <aside class="panel">
+    <div class="box"><h3>Base parts</h3><div style="display:grid;gap:10px">
+      <label class="sel" for="boardSel">Motherboard<select id="boardSel"></select></label>
+      <label class="sel" for="psuSel">Power supply<select id="psuSel"></select></label>
+      <button class="btn" id="resetRig" type="button">Clear the motherboard</button></div></div>
+    <div class="box"><h3>Steps</h3><ol class="steps" id="steps"></ol></div>
+    <div class="box"><h3>Build summary</h3><div class="stat">
+      <div><small>Total cost</small><b id="sCost">–</b></div><div><small>Peak power</small><b id="sWatt">–</b></div>
+      <div><small>Recommended PSU</small><b id="sRec">–</b></div><div><small>Class</small><b id="sTier" style="font-size:16px">–</b></div></div>
+      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">Cost includes the motherboard, PSU, and case + fans (Rp1M). Prices estimated November 2026.</p></div>
+    <div id="alerts" style="display:grid;gap:8px"></div>
+    <div class="box"><h3>Try common mistakes</h3><div class="shop">
+      <button class="btn" type="button" data-try="ddr4">DDR4 RAM in a DDR5 board</button>
+      <button class="btn" type="button" data-try="socket">Intel CPU in an AMD socket</button>
+      <button class="btn" type="button" data-try="x1">GPU in a short slot</button>
+      <button class="btn" type="button" data-try="cooler">Cooler without a CPU</button>
+      <button class="btn" type="button" data-try="psu">RTX 5080 on a 550 W PSU</button></div></div>
+  </aside>
+</div>
+<div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+
+<section class="lesson" id="urutan">
+  <header><div class="eyebrow">Technician's order</div><h2>How to build a real PC, step by step</h2><p>Technicians follow this order so nothing has to be taken apart again. In the simulation above, you're practising steps 2–5.</p></header>
+  <ol class="check">
+    <li><b>Prepare the desk and discharge static</b><span>A wooden table or anti-static mat, a PH2 Phillips screwdriver, and bright light. Touch unpainted metal on the case before handling components, or wear an anti-static wrist strap.</span></li>
+    <li><b>Install the CPU on the motherboard</b><span>Still sitting on the motherboard box, outside the case. Match the gold triangle, set it in without pressing, then close the lever.</span></li>
+    <li><b>Install the M.2 SSD</b><span>Before the cooler and GPU go in, because they often cover the M.2 slot.</span></li>
+    <li><b>Install the RAM</b><span>Slots A2 and B2 for two sticks. Press until the clips click.</span></li>
+    <li><b>Install the CPU cooler</b><span>Fit the backplate or bracket, apply thermal paste if there isn't any, tighten the screws diagonally, and plug the fan cable into CPU_FAN.</span></li>
+    <li><b>Prepare the case</b><span>Check the standoffs match the motherboard's holes. Fit the I/O shield if it isn't already attached to the motherboard.</span></li>
+    <li><b>Put the motherboard in the case</b><span>Line the rear ports up with their openings, then screw down every standoff. Not too tight.</span></li>
+    <li><b>Install the PSU</b><span>PSU fan facing down if the case has a filtered vent at the bottom.</span></li>
+    <li><b>Connect the power cables</b><span>24-pin to the motherboard, 8-pin EPS to the CPU (top-left corner, often forgotten), then SATA power to the drives.</span></li>
+    <li><b>Install the graphics card</b><span>Into the top PCIe x16 slot, screw in its bracket, then plug the PCIe or 12V-2x6 power cable all the way in.</span></li>
+    <li><b>Connect the small case cables</b><span>Power and reset buttons (front panel header), front USB, front audio, and case fans. Check the manual for the front panel pin order.</span></li>
+    <li><b>Power on and enter the BIOS</b><span>Monitor cable into the graphics card's port. Check the CPU, RAM capacity, and SSD are detected. Enable XMP/EXPO. Be patient if DDR5 is doing memory training.</span></li>
+    <li><b>Install Windows and drivers</b><span>From a USB installer. Then the chipset driver, GPU driver, and Windows Update.</span></li>
+    <li><b>Test and tidy up</b><span>Run a 15–30 minute stress test while watching temperatures, check every USB and audio port, then tidy the cables.</span></li>
+  </ol>
+</section>
+
+<section class="lesson" id="kenapa">
+  <header><div class="eyebrow">Physical compatibility</div><h2>Why the wrong part can't be forced in</h2><p>Manufacturers deliberately use different shapes so incompatible parts can't be installed. If something has to be forced, it's almost certainly wrong.</p></header>
+  <div class="cols">
+    <div class="card"><h3>RAM: notch position</h3><p>DDR4 and DDR5 both have 288 pins and the same length, but the notch in the edge connector is shifted by a few millimetres. A DDR5 slot has a key in a position that only matches DDR5. Laptop RAM (SO-DIMM) is shorter and doesn't fit a desktop.</p></div>
+    <div class="card"><h3>CPU: socket</h3><p>AMD AM5 has 1,718 contacts, Intel LGA1700 has 1,700, and Intel LGA1851 (Core Ultra 200S) has 1,851. Their sizes and locking keys differ. Even sockets of the same size (LGA1700 vs LGA1851) aren't interchangeable.</p></div>
+    <div class="card"><h3>PCIe: slot length</h3><p>x1 (±25 mm), x4, x8, and x16 (±89 mm) slots. A short card can go in a long slot (an x1 Wi-Fi card works in an x16 slot), but not the other way round. An x16-shaped slot isn't necessarily wired x16. Check the label next to the slot or the manual.</p></div>
+    <div class="card"><h3>M.2: notch and length</h3><p>An M key notch is for NVMe, B+M for SATA. The length (2230/2242/2280) has to match the position of the retaining screw, which some motherboards let you move.</p></div>
+    <div class="card"><h3>Power cables: pin shapes</h3><p>Each connector pin is either square or square with rounded corners, so CPU and GPU cables can't be mixed up unless forced. If it feels stiff, check the label again.</p></div>
+    <div class="card"><h3>Size: case and cooler</h3><p>Compatibility isn't just about plugs. A 340 mm GPU won't fit a case with a 320 mm limit. A 165 mm cooler won't fit a case with a 160 mm limit. Always check these numbers in the specs.</p></div>
+  </div>
+</section>
+<div class="next"><a href="port.html"><small>← Previous</small><b>Ports & Storage</b></a><a href="servis.html" style="text-align:right"><small>Next →</small><b>Service Mode</b></a></div>
+</main>
+<footer>
+
+<p>Bedah PC is a personal learning resource. Prices are Indonesian market estimates as of November 2026 and can change quickly. Always double-check before quoting. Terms with a dotted underline can be tapped to see their meaning, or open the <a href="glosarium.html">Glossary</a>.</p>
+<p class="brandfoot"><img src="../img/brand/megadinamika.png" alt="" width="40" height="40"><span>Brought to you by <a href="https://megadinamika.com/" target="_blank" rel="noopener"><b>CV Mega Dinamika</b></a> · @cvmegadinamika</span></p>
+</footer>
+</div>
+<script src="../js/rakit.js"></script>
+<script src="../js/glossary.en.js"></script>
+<script src="../js/glossary.js"></script>
+</body>
+</html>

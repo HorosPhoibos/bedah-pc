@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Bedah PC</title>
+<meta name="description" content="Interactive PC component guide: a 3D model you can take apart, real photos, and Indonesian prices.">
+<link rel="alternate" hreflang="id" href="../index.html"><link rel="alternate" hreflang="en" href="index.html">
+<link rel="icon" type="image/png" href="../img/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>window.BASE='../';</script>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="brand" href="index.html"><img src="../img/brand/megadinamika.png" alt="" width="30" height="30"><span class="bt"><b>Bedah <span>PC</span></b><small>by @cvmegadinamika</small></span></a><nav aria-label="Pages"><a href="index.html" aria-current="page">3D Teardown</a><a href="foto.html">Real Photos</a><a href="dasar.html">Start from zero</a><a href="port.html">Ports & Storage</a><a href="rakit.html">Build Mode</a><a href="servis.html">Service Mode</a><a href="pilih.html">Choosing</a><a href="belajar.html">Learn</a><a href="bisnis.html">Business</a><a href="glosarium.html">Glossary</a></nav><div class="langsw" aria-label="Bahasa / Language"><a href="../index.html" hreflang="id" lang="id">ID</a><span class="on" aria-current="true">EN</span></div></header>
+<main>
+
+  <section class="top">
+    <div>
+      <h1>Bedah <span>PC</span></h1>
+      <p>Rotate it, take it apart, then tap any component to see a real photo, what it does, where it sits in the case, its price range in Indonesia, and when you actually need a bigger version.</p>
+    </div>
+    <div class="tag">UNIT <b>Mid-tower ATX</b> · <b>10</b> components<br>PRICES <b>estimated Nov 2026</b> · Rupiah</div>
+  </section>
+
+
+  <section class="bench">
+    <div class="stage-col">
+      <div class="stage" id="stage">
+        <div class="loading" id="loading">Loading 3D model…</div>
+        <div class="labels" id="labels"></div>
+        <div class="hint">Drag to rotate · scroll / pinch to zoom</div>
+      </div>
+      <div class="controls">
+        <label for="explode">Take apart <input id="explode" type="range" min="0" max="1" step="0.01" value="0"></label>
+        <label for="showCase"><input id="showCase" type="checkbox" checked> Case</label>
+        <label for="showNames"><input id="showNames" type="checkbox" checked> Names</label>
+        <label for="spin"><input id="spin" type="checkbox"> Auto-rotate</label>
+        <button class="btn" id="resetView" type="button">Reset view</button>
+      </div>
+    </div>
+
+    <article class="sheet" id="sheet" aria-live="polite"></article>
+  </section>
+
+<section class="lesson" id="jalur">
+  <header><div class="eyebrow">All pages</div><h2>What do you want to learn today?</h2></header>
+  <div class="paths"><a class="path" href="dasar.html"><small>Complete beginner?</small><b>Start from zero</b><span>What a computer is, the restaurant analogy, units, and how to check a PC's specs.</span></a>
+    <a class="path" href="index.html"><small>Step 1</small><b>3D Teardown</b><span>Get to know the 10 main components, where they sit, and their prices.</span></a>
+    <a class="path" href="foto.html"><small>Step 1b</small><b>Labelled Real Photos</b><span>See real motherboards and PC interiors with every component marked.</span></a>
+    <a class="path" href="port.html"><small>Step 2</small><b>Ports & Storage</b><span>Every connector and storage type, with real photos.</span></a>
+    <a class="path" href="rakit.html"><small>Step 3</small><b>Build Mode</b><span>Install components yourself and learn why some don't fit.</span></a>
+    <a class="path" href="servis.html"><small>Step 4</small><b>Service Mode</b><span>Diagnose the 6 most common faults like a technician.</span></a>
+    <a class="path" href="pilih.html"><small>Step 5</small><b>Choosing</b><span>Example builds, PSU calculator, GPU demo, game specs, peripherals.</span></a>
+    <a class="path" href="bisnis.html"><small>Step 6</small><b>Business</b><span>Procurement, QC, used units, client data, presentation cheat sheet.</span></a>
+  <a class="path" href="glosarium.html"><small>Dictionary</small><b>Glossary</b><span>Over 100 computer terms explained in plain English.</span></a></div>
+</section>
+
+</main>
+<footer>
+
+    <p><b>About prices.</b> All prices are estimated Indonesian market ranges (marketplaces and computer shops) as of November 2026, not one shop's prices. Since late 2025, RAM and SSD prices have risen sharply because AI data centres are absorbing so many memory chips, so the numbers can shift quickly. Always double-check before buying.</p>
+    <p><b>Photos.</b> All photos come from Wikimedia Commons under free licences. Authors and licences:</p>
+    <ul id="credits"></ul>
+
+<p>Bedah PC is a personal learning resource. Prices are Indonesian market estimates as of November 2026 and can change quickly. Always double-check before quoting. Terms with a dotted underline can be tapped to see their meaning, or open the <a href="glosarium.html">Glossary</a>.</p>
+<p class="brandfoot"><img src="../img/brand/megadinamika.png" alt="" width="40" height="40"><span>Brought to you by <a href="https://megadinamika.com/" target="_blank" rel="noopener"><b>CV Mega Dinamika</b></a> · @cvmegadinamika</span></p>
+</footer>
+</div>
+<script src="../js/data.en.js"></script><script src="../js/app.js"></script><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script><script type="module" src="../js/viewer3d.js"></script>
+<script src="../js/glossary.en.js"></script>
+<script src="../js/glossary.js"></script>
+</body>
+</html>

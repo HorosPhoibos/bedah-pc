@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Learn · Bedah PC</title>
+<meta name="description" content="Cables, laptops, software, and a computer architecture crash course.">
+<link rel="alternate" hreflang="id" href="../belajar.html"><link rel="alternate" hreflang="en" href="belajar.html">
+<link rel="icon" type="image/png" href="../img/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>window.BASE='../';</script>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="brand" href="index.html"><img src="../img/brand/megadinamika.png" alt="" width="30" height="30"><span class="bt"><b>Bedah <span>PC</span></b><small>by @cvmegadinamika</small></span></a><nav aria-label="Pages"><a href="index.html">3D Teardown</a><a href="foto.html">Real Photos</a><a href="dasar.html">Start from zero</a><a href="port.html">Ports & Storage</a><a href="rakit.html">Build Mode</a><a href="servis.html">Service Mode</a><a href="pilih.html">Choosing</a><a href="belajar.html" aria-current="page">Learn</a><a href="bisnis.html">Business</a><a href="glosarium.html">Glossary</a></nav><div class="langsw" aria-label="Bahasa / Language"><a href="../belajar.html" hreflang="id" lang="id">ID</a><span class="on" aria-current="true">EN</span></div></header>
+<main>
+<header class="pagehead"><div class="eyebrow">Going deeper</div><h1>Learn more deeply</h1><p>Once you know the components, understand how they all work together: cables, laptops, software, and the core of an intro computer architecture course.</p></header><nav class="toc" aria-label="On this page"><a href="#kabel">Cables</a><a href="#laptop">Laptops</a><a href="#software">Software</a><a href="#kuliah">Deep dive</a></nav><section class="lesson" id="kabel">
+    <header>
+      <div class="eyebrow">Cables</div>
+      <h2>What's inside a cable, and why prices vary so much</h2>
+      <p>Two cables that look the same can differ in price by 5×. The difference is inside: the metal, the thickness, the shielding, and the certification.</p>
+    </header>
+    <div class="cols">
+      <div class="card"><h3>Inside a cable</h3><ul><li><b>Conductor</b>: the metal wire that carries power or signal, ideally pure copper.</li><li><b>Insulation</b>: plastic around each wire so they don't short.</li><li><b>Shielding</b>: a foil or braided metal layer that blocks outside interference. Important in data cables.</li><li><b>Jacket</b>: the outer skin that protects against bending and abrasion.</li><li><b>Connector</b>: the plug. How well it's crimped decides how long the cable lasts.</li></ul></div>
+      <div class="card"><h3>Pure copper vs CCA</h3><p>Cheap cables often use <span class="k">CCA</span> (Copper Clad Aluminium): aluminium with a thin copper coating. It's more resistive, heats up more easily, and breaks more easily.</p><p>CCA LAN cables can make connections unstable over long runs and aren't suitable for PoE (CCTV or access points powered over the LAN cable). For office installations, ask for <b>pure copper</b>.</p></div>
+      <div class="card"><h3>Wire thickness (AWG)</h3><p>A <b>smaller</b> AWG number means a <b>thicker</b> wire. Quality PSU power cables use 16–18 AWG. Wire that's too thin for a large current can heat up and even melt.</p><p>That's why the 12V-2x6 GPU connector has to be plugged in all the way and must not be bent sharply near the plug.</p></div>
+      <div class="card"><h3>Expensive isn't always better</h3><p>HDMI, DisplayPort, and USB signals are digital, so there are only two outcomes: it works or it doesn't. A certified Rp150K HDMI cable gives exactly the same picture as a Rp1.5M one.</p><p>Gold-plated connectors only help against corrosion. Pay for <b>certification and version</b>, not for the brand or the shine.</p></div>
+    </div>
+    <div class="tbox" style="margin-top:16px"><table class="dt">
+      <thead><tr><th>Cable</th><th>Job</th><th>What drives the price</th><th>Range</th></tr></thead>
+      <tbody>
+        <tr><td><b>24-pin ATX</b>, <b>8-pin EPS</b></td><td>Power from the PSU to the motherboard and CPU</td><td>Usually included with the PSU. Colourful "sleeved" versions are only cosmetic.</td><td class="num">comes with PSU</td></tr>
+        <tr><td><b>PCIe 8-pin / 12V-2x6</b></td><td>Power to the GPU. 12V-2x6 can deliver up to 600 W</td><td>Wire thickness, pin quality, ATX 3.1 standard</td><td class="num">comes with PSU</td></tr>
+        <tr><td><b>SATA</b> (data + power)</td><td>HDDs and 2.5" SSDs</td><td>Almost no speed difference, maximum 6 Gbps</td><td class="num">Rp10–30K</td></tr>
+        <tr><td><b>Power cord</b> (C13)</td><td>Wall socket to PSU / monitor</td><td>Wire thickness, must carry the SNI mark</td><td class="num">Rp20–60K</td></tr>
+        <tr><td><b>HDMI</b></td><td>Monitors, TVs, projectors</td><td>Version: HDMI 2.0 (4K 60 Hz) vs 2.1 Ultra High Speed 48 Gbps (4K 120 Hz). Look for the certification label with a QR code.</td><td class="num">Rp50–300K</td></tr>
+        <tr><td><b>DisplayPort</b></td><td>High-refresh gaming monitors</td><td>DP 1.4 vs DP 2.1 (UHBR). Long cables need better quality.</td><td class="num">Rp80–400K</td></tr>
+        <tr><td><b>USB-C</b></td><td>Data, charging, monitors</td><td>A cable can be USB 2.0 only (480 Mbps) or USB4 (40–80 Gbps). 60 W vs 240 W power (needs an e-marker chip).</td><td class="num">Rp30–500K</td></tr>
+        <tr><td><b>LAN Cat5e / Cat6 / Cat6a</b></td><td>Office networks</td><td>Cat5e and Cat6: 1 Gbps (Cat6 can do 10 Gbps up to ±55 m). Cat6a: 10 Gbps up to 100 m. Pure copper vs CCA, unshielded UTP vs shielded STP.</td><td class="num">Rp4–15K/m</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="lesson" id="laptop">
+    <header>
+      <div class="eyebrow">Laptops</div>
+      <h2>Same components, different arrangement</h2>
+      <p>A laptop has the same CPU, RAM, SSD, and GPU doing the same jobs. The difference is that everything is packed onto one thin board and shares a small cooler.</p>
+    </header>
+    <div class="cols">
+      <div class="card"><h3>Laptop processors</h3><p>Look at the letters after the name. <span class="k">U</span> is battery-friendly for office work, <span class="k">H</span> / <span class="k">HX</span> are powerful for gaming and editing, <span class="k">V</span> / <span class="k">Lunar Lake</span> are thin and efficient. Examples: Core Ultra 7 255H, Ryzen AI 7 350.</p><p>Laptop CPUs are soldered to the board, so they can't be replaced.</p></div>
+      <div class="card"><h3>RAM is often soldered</h3><p>Many thin laptops use <span class="k">LPDDR5X</span> RAM that's permanently attached. That means the capacity you buy is the capacity forever. Laptops that still have <span class="k">SO-DIMM</span> slots can be upgraded.</p><p>Advice: if the RAM is soldered, get at least 16 GB from the start.</p></div>
+      <div class="card"><h3>Laptop GPUs are weaker</h3><p>A laptop RTX 5070 isn't as strong as a desktop RTX 5070, because it's limited by power and heat. Look for the <span class="k">TGP</span> (watts) in the specs: higher means faster.</p></div>
+      <div class="card"><h3>Only in laptops</h3><ul><li>Battery (Wh): bigger lasts longer.</li><li>Built-in screen: check resolution, refresh rate, and brightness (nits).</li><li>A power adapter replaces the PSU.</li><li>Keyboard, touchpad, webcam, and Wi-Fi are built in.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="software">
+    <header>
+      <div class="eyebrow">Software</div>
+      <h2>The layers on top of the hardware</h2>
+      <p>Hardware can't do anything without software. Each layer talks to the layer below it. Tap a layer to see its explanation.</p>
+    </header>
+    <div class="stack">
+      <div class="layers" id="layers"></div>
+      <div class="layer-detail" id="layerDetail"></div>
+    </div>
+    <h3 style="font-size:19px;margin:30px 0 12px">What happens when you press the power button</h3>
+    <ol class="boot">
+      <li><b>Power comes in</b>The PSU turns on all its voltages and the motherboard signals "power good".</li>
+      <li><b>UEFI firmware runs</b>A small program on the motherboard chip wakes up before Windows does.</li>
+      <li><b>Hardware check (POST)</b>UEFI checks the CPU, RAM, and GPU. If the RAM has a problem, the PC beeps or a debug light turns on.</li>
+      <li><b>Find a boot device</b>UEFI looks for the SSD that holds the operating system, then runs the bootloader.</li>
+      <li><b>OS loads into RAM</b>The Windows/Linux kernel is copied from the SSD into RAM, then drivers load.</li>
+      <li><b>Login screen</b>The OS is ready. Apps you open are copied from the SSD into RAM, then run by the CPU.</li>
+    </ol>
+  </section>
+
+  <section class="lesson" id="kuliah">
+    <header>
+      <div class="eyebrow">Deep dive</div>
+      <h2>How a computer really works</h2>
+      <p>This section is the core of a Computer Organisation and Architecture course, condensed. Once this makes sense, you can explain why a spec makes sense instead of just memorising numbers.</p>
+    </header>
+
+    <h3 style="font-size:19px;margin-bottom:6px">1. The memory hierarchy: why there's cache, RAM, and an SSD</h3>
+    <p style="color:var(--muted);max-width:72ch;margin:0 0 14px">The closer to the CPU, the faster but also the smaller and more expensive. To make it relatable, let's slow time down: pretend 1 nanosecond is 1 second.</p>
+    <div class="lat" id="lat"></div>
+    <p style="font-size:13px;color:var(--muted);margin-top:8px">These are typical textbook orders of magnitude, not measurements of one product. The bar scale is logarithmic: each step to the right is 10× slower.</p>
+    <p style="max-width:72ch">This is why full RAM makes a PC feel like it's "hanging". Windows has to move data onto the SSD (the page file), which is hundreds of times slower than RAM. It's also why an HDD makes Windows slow: every small file needs a physical head to move into position.</p>
+
+    <h3 style="font-size:19px;margin:30px 0 12px">2. The CPU's work cycle</h3>
+    <ol class="boot">
+      <li><b>Fetch</b>The CPU fetches the next instruction from memory (usually already in the cache).</li>
+      <li><b>Decode</b>The instruction is decoded: is it an addition, a comparison, or a command to load data?</li>
+      <li><b>Execute</b>The arithmetic unit (ALU) or the floating-point unit (FPU) carries it out.</li>
+      <li><b>Write back</b>The result is stored in a register or memory, and the cycle repeats billions of times per second.</li>
+    </ol>
+    <p style="max-width:72ch;margin-top:14px">Modern CPUs overlap many instructions at once (pipelining), guess which way a program will branch before it happens (branch prediction), and have several cores, each running this cycle on its own. That's why GHz alone isn't enough to compare CPUs from different generations. What decides it is IPC (instructions per clock) × GHz × the number of cores the application actually uses.</p>
+
+    <div class="cols" style="margin-top:26px">
+      <div class="card"><h3>3. Transistors and "nanometres"</h3><p>A CPU contains tens of billions of transistors, microscopic switches that are 0 or 1. The manufacturing processes have names like 4 nm, 3 nm, or Intel 18A.</p><p>Those numbers are now just <b>generation names for the factory process</b>, not the real size of a transistor. Examples: Ryzen 9000 is made on TSMC N4P, Core Ultra 200S uses TSMC N3B, and Core Ultra Series 3 laptops (Panther Lake) use Intel 18A. Newer processes are generally more power-efficient.</p></div>
+      <div class="card"><h3>4. PCIe lanes</h3><p>Fast components talk over PCIe lanes. One lane is roughly:</p><ul><li>Gen3 ≈ 1 GB/s</li><li>Gen4 ≈ 2 GB/s</li><li>Gen5 ≈ 4 GB/s</li></ul><p>A GPU uses 16 lanes (x16), an NVMe SSD uses 4 lanes (x4). So a Gen4 x4 NVMe tops out around 8 GB/s, which matches the ±7,000 MB/s on its box.</p></div>
+      <div class="card"><h3>5. Bits vs bytes</h3><p>1 byte = 8 bits. Internet speed is written in <b>bits</b> (Mbps), file sizes in <b>bytes</b> (MB).</p><p>100 Mbps internet means downloads of at most about 12.5 MB/s. This often makes clients feel their "internet isn't as advertised", even though the maths is right.</p></div>
+      <div class="card"><h3>6. Why a 1 TB SSD shows 931 GB</h3><p>Manufacturers count 1 TB = 1,000,000,000,000 bytes. Windows counts in powers of 2 (1 GB = 1,073,741,824 bytes). The result: 1 TB shows as about 931 GB.</p><p>No capacity is lost or stolen. Buyers ask about this very often.</p></div>
+      <div class="card"><h3>7. Watts = Volts × Amps</h3><p>Almost every PC component runs on the 12 V rail. A 360 W GPU pulls about 30 amps at 12 V. Current that large is why cable and connector quality matter.</p></div>
+      <div class="card"><h3>8. Bottlenecks</h3><p>A system is only as fast as its weakest part. A high-end GPU with an old CPU: the GPU waits for the CPU. A fast CPU with a single RAM stick: the CPU waits for data. A good build is <b>balanced</b>, not one super-expensive component.</p></div>
+    </div>
+  </section>
+<div class="next"><a href="pilih.html"><small>← Previous</small><b>Choosing</b></a><a href="bisnis.html" style="text-align:right"><small>Next →</small><b>Business</b></a></div>
+</main>
+<footer>
+
+<p>Bedah PC is a personal learning resource. Prices are Indonesian market estimates as of November 2026 and can change quickly. Always double-check before quoting. Terms with a dotted underline can be tapped to see their meaning, or open the <a href="glosarium.html">Glossary</a>.</p>
+<p class="brandfoot"><img src="../img/brand/megadinamika.png" alt="" width="40" height="40"><span>Brought to you by <a href="https://megadinamika.com/" target="_blank" rel="noopener"><b>CV Mega Dinamika</b></a> · @cvmegadinamika</span></p>
+</footer>
+</div>
+<script src="../js/data.en.js"></script><script src="../js/app.js"></script>
+<script src="../js/glossary.en.js"></script>
+<script src="../js/glossary.js"></script>
+</body>
+</html>

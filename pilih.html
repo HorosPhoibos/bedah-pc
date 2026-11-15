@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Memilih · Bedah PC</title>
+<meta name="description" content="Contoh rakitan, kalkulator PSU, demo GPU, spek game, dan perangkat pendukung.">
+<link rel="alternate" hreflang="id" href="pilih.html"><link rel="alternate" hreflang="en" href="en/pilih.html">
+<link rel="icon" type="image/png" href="img/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>window.BASE='';</script>
+</head>
+<body>
+<div class="wrap">
+<header class="site"><a class="brand" href="index.html"><img src="img/brand/megadinamika.png" alt="" width="30" height="30"><span class="bt"><b>Bedah <span>PC</span></b><small>oleh @cvmegadinamika</small></span></a><nav aria-label="Halaman"><a href="index.html">Bedah 3D</a><a href="foto.html">Foto Asli</a><a href="dasar.html">Mulai dari nol</a><a href="port.html">Port & Penyimpanan</a><a href="rakit.html">Mode Rakit</a><a href="servis.html">Mode Servis</a><a href="pilih.html" aria-current="page">Memilih</a><a href="belajar.html">Belajar</a><a href="bisnis.html">Bisnis</a><a href="glosarium.html">Glosarium</a></nav><div class="langsw" aria-label="Bahasa / Language"><span class="on" aria-current="true">ID</span><a href="en/pilih.html" hreflang="en" lang="en">EN</a></div></header>
+<main>
+<header class="pagehead"><div class="eyebrow">Memilih & membandingkan</div><h1>Memilih komponen yang tepat</h1><p>Spesifikasi yang tepat adalah yang sesuai kebutuhan, bukan yang paling mahal. Halaman ini membantu menghitung dan membandingkan.</p></header><nav class="toc" aria-label="Isi halaman"><a href="#rakitan">Contoh rakitan</a><a href="#psu-calc">Kalkulator PSU</a><a href="#gpu-demo">Demo GPU</a><a href="#game">Spek game</a><a href="#pendukung">Perangkat pendukung</a></nav><section class="lesson" id="rakitan">
+    <header>
+      <div class="eyebrow">Contoh rakitan</div>
+      <h2>Satu PC, tiga kebutuhan</h2>
+      <p>Komponen yang sama bisa dirakit untuk keperluan yang sangat berbeda. Pilih kebutuhan untuk melihat spesifikasi yang masuk akal dan total biayanya. Klik nama komponen untuk melompat ke penjelasannya.</p>
+    </header>
+    <div class="tabs" role="tablist" id="buildTabs"></div>
+    <div class="build" id="build"></div>
+  </section>
+<section class="lesson" id="psu-calc">
+    <header>
+      <div class="eyebrow">Kalkulator PSU</div>
+      <h2>Berapa watt yang sebenarnya dibutuhkan?</h2>
+      <p>Pilih komponennya, lalu lihat siapa yang paling banyak memakan listrik. Hampir selalu jawabannya GPU dan CPU. RAM dan SSD hanya memakai beberapa watt.</p>
+    </header>
+    <div class="calc">
+      <form class="form" id="psuForm" onsubmit="return false">
+        <label for="pCpu">Prosesor<select id="pCpu"></select></label>
+        <label for="pGpu">Kartu grafis<select id="pGpu"></select></label>
+        <div class="row">
+          <label for="pRam">Keping RAM<select id="pRam"><option value="1">1</option><option value="2" selected>2</option><option value="4">4</option></select></label>
+          <label for="pNvme">SSD NVMe<select id="pNvme"><option>1</option><option>2</option><option>3</option></select></label>
+          <label for="pHdd">HDD / SATA<select id="pHdd"><option>0</option><option>1</option><option>2</option><option>4</option></select></label>
+        </div>
+        <div class="row">
+          <label for="pFan">Kipas<select id="pFan"><option>1</option><option>2</option><option selected>4</option><option>6</option><option>9</option></select></label>
+          <label for="pAio">Pendingin<select id="pAio"><option value="0">Udara</option><option value="1">AIO (pompa)</option></select></label>
+          <label for="pRgb">Lampu RGB<select id="pRgb"><option value="0">Tidak</option><option value="1">Ya</option></select></label>
+        </div>
+      </form>
+      <div class="result" aria-live="polite">
+        <div class="mono" style="font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase">PSU yang disarankan</div>
+        <div class="big" id="psuRec">650<small>W</small></div>
+        <div class="mono" style="font-size:13px;color:var(--muted);margin-top:6px" id="psuLoad"></div>
+        <div class="wbar" id="wbar"></div>
+        <div class="wlegend" id="wlegend"></div>
+        <div class="why" id="psuWhy"></div>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:16px">
+      <div class="card"><h3>Kalau PSU kekecilan</h3><ul><li>PC tiba-tiba mati atau restart saat main game berat atau render, karena proteksi PSU memutus daya.</li><li>Layar biru (BSOD) atau GPU "hilang" dari sistem.</li><li>PSU bekerja di 100% terus-menerus: panas, berisik, dan cepat rusak.</li></ul></div>
+      <div class="card"><h3>Kalau PSU kebesaran</h3><ul><li>Tidak berbahaya. PC hanya menarik listrik sesuai kebutuhan.</li><li>Tagihan listrik tidak naik karena angka watt PSU. Yang menentukan tagihan adalah pemakaian komponen.</li><li>Kerugiannya hanya harga beli lebih mahal, dan efisiensi sedikit turun di beban yang sangat rendah.</li></ul></div>
+      <div class="card"><h3>Lonjakan sesaat</h3><p>GPU modern bisa melonjak di atas watt resminya selama sepersekian milidetik. Karena itu NVIDIA menyarankan PSU yang jauh lebih besar dari angka watt kartunya. Contohnya RTX 5070 dengan 250 W disarankan memakai PSU 650 W.</p></div>
+    </div>
+  </section>
+<section class="lesson" id="gpu-demo">
+    <header>
+      <div class="eyebrow">Demo</div>
+      <h2>Rasanya kalau GPU terlalu lemah</h2>
+      <p>Layar di bawah ini meniru gejala nyata di game. Pilih kelas GPU, lalu gerakkan mouse atau jari di atas layar untuk menyetir. Grafik di bawah layar adalah frame time: garis rata berarti mulus, paku tinggi berarti tersendat.</p>
+    </header>
+    <div class="demo">
+      <div>
+        <div class="screen" id="screen"><canvas id="game" width="960" height="540" aria-label="Simulasi game"></canvas><div class="hud" id="hud"></div></div>
+        <canvas class="ftg" id="ftg" aria-label="Grafik frame time"></canvas>
+      </div>
+      <div class="presets" id="presets"></div>
+    </div>
+    <div class="controls" style="margin-top:10px">
+      <label for="pingT"><input type="checkbox" id="pingT"> Internet lambat (ping 250 ms)</label>
+    </div>
+    <div class="symptoms">
+      <div class="card"><h3>Patah-patah (FPS rendah)</h3><p>GPU tidak sempat menggambar cukup banyak frame per detik. Di bawah 30 FPS gerakan terasa seperti slide show. 60 FPS terasa mulus, dan 144 FPS terasa sangat halus, tapi hanya terlihat di monitor 144 Hz.</p></div>
+      <div class="card"><h3>Buram atau pecah</h3><p>Supaya FPS naik, game menurunkan resolusi render lalu memperbesarnya ke layar. Hasilnya gambar terlihat lembek dan buram. DLSS dan FSR adalah cara pintar melakukan ini dengan AI supaya tidak terlalu buram.</p></div>
+      <div class="card"><h3>Tersendat (stutter)</h3><p>Tiba-tiba layar berhenti sepersekian detik. Penyebab tersering adalah VRAM GPU penuh (tekstur terlalu besar), RAM penuh, atau game sedang memuat data dari penyimpanan yang lambat.</p></div>
+      <div class="card"><h3>Lag online ≠ GPU</h3><p>Nyalakan opsi ping 250 ms. Gambarnya tetap mulus, tapi mobil telat mengikuti tanganmu. Itu masalah koneksi internet atau server, bukan kartu grafis. GPU mahal tidak menyembuhkan ping tinggi.</p></div>
+    </div>
+  </section>
+<section class="lesson" id="game">
+    <header>
+      <div class="eyebrow">Spek game</div>
+      <h2>Spesifikasi game populer</h2>
+      <p>Diambil dari spesifikasi resmi pembuat game. "Minimum" berarti game bisa jalan di setelan rendah. "Disarankan" berarti pengalaman yang wajar. Kolom terakhir menunjukkan apakah rakitan contoh di atas sanggup menjalankannya.</p>
+    </header>
+    <div class="tbox"><table class="dt">
+      <thead><tr><th>Game</th><th>Minimum</th><th>Disarankan</th><th>RAM</th><th>PC Kantor (iGPU)</th><th>PC Gaming</th></tr></thead>
+      <tbody>
+        <tr><td><b>Valorant</b><br><small style="color:var(--muted)">butuh TPM 2.0 + Secure Boot di Windows 11</small></td><td>Sangat ringan. Grafis bawaan CPU modern sudah cukup.</td><td>60 FPS: Core i3-4150 + GT 730<br>144 FPS: Core i5-9400F + GTX 1050 Ti</td><td class="num">4 GB+</td><td class="ok">Bisa</td><td class="ok">Sangat lancar</td></tr>
+        <tr><td><b>Dota 2</b></td><td>Dual-core 2,8 GHz + GeForce 8600/9600GT</td><td>Valve tidak merilis angka resmi</td><td class="num">4 GB</td><td class="ok">Bisa</td><td class="ok">Sangat lancar</td></tr>
+        <tr><td><b>Counter-Strike 2</b></td><td>4 thread (Core i5-750) + GPU 1 GB DirectX 11</td><td>Tidak dirilis</td><td class="num">8 GB</td><td>Setelan rendah</td><td class="ok">Sangat lancar</td></tr>
+        <tr><td><b>Battlefield 6</b><br><small style="color:var(--muted)">butuh TPM 2.0 + Secure Boot</small></td><td>Core i5-8400 / Ryzen 5 2600 + RTX 2060 / RX 5600 XT</td><td>Core i7-10700 / Ryzen 7 3700X + RTX 3060 Ti / RX 6700 XT</td><td class="num">16 GB</td><td class="bad">Tidak</td><td class="ok">Bisa, setelan tinggi</td></tr>
+        <tr><td><b>Black Myth: Wukong</b></td><td>Core i5-8400 / Ryzen 5 1600 + GTX 1060 6GB</td><td>Core i7-9700 / Ryzen 5 5500 + RTX 2060</td><td class="num">16 GB</td><td class="bad">Tidak</td><td class="ok">Bisa</td></tr>
+        <tr><td><b>GTA VI</b></td><td colspan="3">Rilis 19 November 2026 hanya di PS5 dan Xbox Series. Versi PC dan spesifikasinya belum diumumkan Rockstar.</td><td>–</td><td>–</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:13px;color:var(--muted);margin-top:10px">Cara membaca: komponen yang tertulis adalah standar minimal, bukan yang harus dibeli. CPU atau GPU yang lebih baru di kelas yang sama atau lebih tinggi pasti lolos. Contoh: Ryzen 5 9600X jauh lebih kuat dari Ryzen 5 2600. Sebelum menjanjikan ke klien, cek ulang di halaman Steam atau situs resmi game karena spesifikasi bisa diperbarui.</p>
+  </section>
+<section class="lesson" id="pendukung">
+  <header><div class="eyebrow">Perangkat pendukung</div><h2>Monitor, keyboard, UPS, dan jaringan</h2><p>Satu paket PC kantor tidak lengkap tanpa ini. Sering juga di sinilah margin keuntungan dan keluhan klien muncul.</p></header>
+  <div class="cols">
+    <div class="card"><h3>Monitor</h3><ul>
+      <li><b>Panel</b>: IPS (warna akurat, umum untuk kantor dan desain), VA (kontras tinggi, hitam pekat), TN (murah, warna pucat), OLED (paling bagus, paling mahal).</li>
+      <li><b>Resolusi</b>: Full HD 1920×1080 cocok untuk 22–24", QHD 2560×1440 untuk 27", 4K 3840×2160 untuk desain dan video.</li>
+      <li><b>Refresh rate</b>: 60–100 Hz untuk kantor, 144–180 Hz untuk gaming.</li>
+      <li><b>Port</b>: pastikan cocok dengan PC. PC lama mungkin hanya VGA atau DVI.</li>
+      <li><b>Harga</b>: 24" FHD IPS kantor Rp1,3–2,5 jt · 27" QHD 165 Hz Rp3–5 jt · OLED Rp8 jt ke atas.</li></ul></div>
+    <div class="card"><h3>Keyboard dan mouse</h3><ul>
+      <li><b>Membrane</b>: senyap dan murah, standar kantor.</li>
+      <li><b>Mechanical</b>: tiap tombol punya switch sendiri, lebih awet dan enak diketik, lebih berisik.</li>
+      <li><b>Nirkabel</b>: dongle 2.4 GHz (stabil, plug-and-play) atau Bluetooth (tanpa dongle, kadang perlu pairing ulang).</li>
+      <li>Untuk sewa kantor: set kabel USB paling minim masalah dan paling mudah diganti.</li></ul></div>
+    <div class="card"><h3>UPS</h3><ul>
+      <li>Baterai cadangan 5–15 menit saat listrik padam, cukup untuk menyimpan pekerjaan dan mematikan PC dengan benar.</li>
+      <li><b>Jenis</b>: line-interactive (dengan AVR) paling umum untuk PC kantor. Online UPS untuk server dan alat sensitif.</li>
+      <li><b>VA bukan watt</b>: UPS 650 VA biasanya hanya sanggup ±325–390 W. Hitung watt PC + monitor, lalu pilih UPS yang watt-nya lebih besar.</li>
+      <li>PSU modern (active PFC) paling aman dengan UPS <b>pure sine wave</b>. UPS murah memakai gelombang kotak, dan pada sebagian PSU bisa membuat PC mati saat pindah ke baterai.</li>
+      <li><b>Harga</b>: 650–800 VA Rp0,7–1,2 jt · 1200 VA Rp1,5–2,5 jt · pure sine 1500 VA Rp3–6 jt.</li></ul></div>
+    <div class="card"><h3>Stabilizer dan arde</h3><ul>
+      <li>Stabilizer menstabilkan tegangan yang naik-turun, tapi tidak menolong saat listrik padam.</li>
+      <li>Di lokasi dengan listrik sering turun atau naik, UPS line-interactive sudah mencakup fungsi AVR ini.</li>
+      <li>Pastikan instalasi listrik kantor punya arde (grounding). Tanpa arde, casing bisa terasa nyetrum dan perangkat lebih mudah rusak saat petir.</li></ul></div>
+    <div class="card"><h3>Jaringan</h3><ul>
+      <li><b>Wi-Fi</b>: Wi-Fi 5 (802.11ac), Wi-Fi 6 (ax), Wi-Fi 6E (tambah pita 6 GHz), Wi-Fi 7 (be). Untuk kantor ramai, Wi-Fi 6 ke atas jauh lebih stabil.</li>
+      <li><b>LAN</b>: 1 Gbps standar, 2.5 Gbps mulai umum di motherboard baru. PC di meja sebaiknya pakai kabel, lebih stabil dari Wi-Fi.</li>
+      <li><b>Switch</b>: memperbanyak port LAN. Router: membagi internet. Access point: memperluas Wi-Fi.</li></ul></div>
+    <div class="card"><h3>Webcam dan headset</h3><ul>
+      <li>Rapat online jadi rutinitas. Webcam 1080p dan headset dengan mikrofon jauh lebih jelas dari mikrofon bawaan.</li>
+      <li>Headset USB tidak tergantung kualitas jack audio PC dan umumnya lebih sedikit masalah suara.</li></ul></div>
+  </div>
+</section>
+<div class="next"><a href="servis.html"><small>← Sebelumnya</small><b>Mode Servis</b></a><a href="belajar.html" style="text-align:right"><small>Berikutnya →</small><b>Belajar</b></a></div>
+</main>
+<footer>
+
+<p>Bedah PC adalah bahan belajar pribadi. Harga adalah perkiraan pasar Indonesia per November 2026 dan bisa berubah cepat. Selalu cek ulang sebelum memberi penawaran. Istilah bergaris titik-titik bisa diketuk untuk melihat artinya, atau buka <a href="glosarium.html">Glosarium</a>.</p>
+<p class="brandfoot"><img src="img/brand/megadinamika.png" alt="" width="40" height="40"><span>Dipersembahkan oleh <a href="https://megadinamika.com/" target="_blank" rel="noopener"><b>CV Mega Dinamika</b></a> · @cvmegadinamika</span></p>
+</footer>
+</div>
+<script src="js/data.js"></script><script src="js/app.js"></script>
+
+<script src="js/glossary.js"></script>
+</body>
+</html>
